@@ -34,12 +34,17 @@ export enum RoutesAlias {
   infoList = '/info/info-list', // 信息列表
 
   // 信息管理
+  publicity = '/info/publicity', // 宣传视频管理
+  policy = '/info/policy', // 政策发布管理
+  news = '/info/news', // 新闻资讯管理
+  service = '/info/service', // 服务信息管理
 
   // 系统管理
   User = '/system/user', // 账户
   Role = '/system/role', // 角色
   UserCenter = '/system/user-center', // 用户中心
-  Menu = '/system/menu' // 菜单
+  Menu = '/system/menu', // 菜单
 
   // 日志管理
+  Log = '/log/log-list' // 日志列表
 }

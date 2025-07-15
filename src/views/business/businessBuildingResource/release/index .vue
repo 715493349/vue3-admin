@@ -6,4 +6,6 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @use './style';
+</style>

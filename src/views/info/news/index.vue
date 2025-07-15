@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>其他资源发布</h1>
+    <h1>{{ $t(`menus.info.news`) }}</h1>
   </div>
 </template>
 

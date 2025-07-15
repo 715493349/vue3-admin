@@ -220,11 +220,41 @@ export const asyncRoutes: AppRouteRecord[] = [
     },
     children: [
       {
-        path: 'info-list',
-        name: 'InfoList',
-        component: RoutesAlias.infoList,
+        path: 'publicity',
+        name: 'Publicity',
+        component: RoutesAlias.publicity,
         meta: {
-          title: 'menus.info.infoList',
+          title: 'menus.info.publicity',
+          icon: '&#xe62c;',
+          keepAlive: true
+        }
+      },
+      {
+        path: 'policy',
+        name: 'Policy',
+        component: RoutesAlias.policy,
+        meta: {
+          title: 'menus.info.policy',
+          icon: '&#xe62c;',
+          keepAlive: true
+        }
+      },
+      {
+        path: 'news',
+        name: 'News',
+        component: RoutesAlias.news,
+        meta: {
+          title: 'menus.info.news',
+          icon: '&#xe62c;',
+          keepAlive: true
+        }
+      },
+      {
+        path: 'service',
+        name: 'Service',
+        component: RoutesAlias.service,
+        meta: {
+          title: 'menus.info.service',
           icon: '&#xe62c;',
           keepAlive: true
         }
@@ -294,6 +324,26 @@ export const asyncRoutes: AppRouteRecord[] = [
               authMark: 'delete'
             }
           ]
+        }
+      }
+    ]
+  },
+  {
+    path: '/log',
+    name: 'Log',
+    component: RoutesAlias.Layout,
+    meta: {
+      title: 'menus.log.title',
+      icon: '&#xe816;'
+    },
+    children: [
+      {
+        path: 'log-list',
+        name: 'LogList',
+        component: RoutesAlias.Log,
+        meta: {
+          title: 'menus.log.logList',
+          keepAlive: true
         }
       }
     ]

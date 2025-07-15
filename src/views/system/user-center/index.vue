@@ -165,7 +165,7 @@
     email: 'xxxxxxxx@gmail.com',
     mobile: '18888888888',
     address: '地球',
-    sex: '2',
+    sex: '1',
     des: '后台管理系统模版.'
   })
 

@@ -228,7 +228,14 @@
     },
     "info": {
       "title": "信息管理",
-      "infoList": "信息列表"
+      "publicity": "宣传视频管理",
+      "policy": "政策发布管理",
+      "news": "新闻资讯管理",
+      "service": "服务信息管理"
+    },
+    "log": {
+      "title": "日志管理",
+      "logList": "日志列表"
     },
     "result": {
       "title": "结果页面",
