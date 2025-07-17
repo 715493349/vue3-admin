@@ -71,23 +71,23 @@ export const asyncRoutes: AppRouteRecord[] = [
             // 新增
             path: 'entering/add',
             name: 'LandAdd',
-            component: RoutesAlias.landForm,
+            component: RoutesAlias.landFormAdd,
             meta: {
               title: 'menus.business.landResourceAdd',
               icon: '&#xe60c;',
               isHide: true,
-              keepAlive: true
+              keepAlive: false
             }
           },
           {
-            path: 'entering/:id',
+            path: 'entering/edit/:id',
             name: 'LandEdit',
-            component: RoutesAlias.landForm,
+            component: RoutesAlias.landFormEdit,
             meta: {
               title: 'menus.business.landResourceEdit',
               icon: '&#xe60c;',
               isHide: true,
-              keepAlive: true
+              keepAlive: false
             }
           },
           {

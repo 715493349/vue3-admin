@@ -122,7 +122,7 @@
           prop: 'operation',
           label: '操作',
           align: 'center',
-          ...(showDelete ? { width: 180 } : {}),
+          ...(!showDelete ? { width: 180 } : {}),
           fixed: 'right', // 固定列
           formatter: (row) =>
             h('div', [
@@ -150,7 +150,7 @@
     }
   })
 
-  // 添加
+  // 新增
   const handleAdd = () => {
     // ElMessage.success('添加用户功能待实现')
     router.push({ name: 'LandAdd' })

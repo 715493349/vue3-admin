@@ -120,7 +120,7 @@
           prop: 'operation',
           label: '操作',
           align: 'center',
-          ...(showDelete ? { width: 180 } : {}),
+          ...(!showDelete ? { width: 180 } : {}),
           fixed: 'right', // 固定列
           formatter: (row) =>
             h('div', [

@@ -1,62 +1,50 @@
 <template>
-  <!-- <ArtBreadcrumb /> -->
-  <div class="cards">
-    <!-- <div class="form-footer">
-      <el-button @click="goBack">返回</el-button>
-      <el-button type="primary" @click="handleSubmit">{{ isEdit ? '保存' : '新增' }}</el-button>
-    </div> -->
-
-    <ElRow :gutter="24">
-      <ElCol :xs="24" :sm="12" :md="24">
-        <ArtStatsCard
-          title="地块数量"
-          description="10dsadad0"
-          :iconSize="32"
-          iconBgColor="#409eff"
-          showArrow
-        />
-      </ElCol>
-    </ElRow>
-  </div>
+  <FullScreenCardPage :buttons="footerButtons" :blocks="cardBlocks">
+    <template #basic>
+      <!-- {{ isEdit ? '编辑模式：基本信息' : '新增模式：基本信息' }} -->
+      <BasicInfo ref="landFormRef" :isEdit="isEdit" />
+    </template>
+    <template #media> {{ isEdit ? '编辑模式：媒体信息' : '新增模式：媒体信息' }} </template>
+    <template #description> {{ isEdit ? '编辑模式：地块解读' : '新增模式：地块解读' }} </template>
+    <template #other> {{ isEdit ? '编辑模式：其他信息' : '新增模式：其他信息' }} </template>
+  </FullScreenCardPage>
 </template>
 
 <script setup lang="ts">
-  // import { onMounted, reactive } from 'vue'
-  // import { useRoute, useRouter } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
+  import FullScreenCardPage, { FooterButton } from '@/components/develop/form-layout/index.vue'
+  import { ElMessage } from 'element-plus'
+  import BasicInfo from './form/basic.vue'
 
-  // // 获取路由信息
-  // const route = useRoute()
-  // const router = useRouter()
+  const route = useRoute()
+  const router = useRouter()
+  const isEdit = computed(() => route.name === 'LandEdit')
+  console.log(isEdit.value)
+  const landFormRef = ref()
 
-  // // 判断当前是编辑还是新增
-  // const isEdit = route.name === 'LandEdit'
+  const footerButtons: FooterButton[] = [
+    { label: '取消', onClick: () => router.back() },
+    { label: '暂存', type: 'default', onClick: () => ElMessage.success('暂存成功') },
+    { label: '提交', type: 'primary', onClick: () => submitForm() }
+  ]
 
-  // // 表单数据
-  // const formData = reactive({
-  //   landName: '',
-  //   landArea: ''
-  //   // 其他字段
-  // })
+  const submitForm = async () => {
+    const formRef = landFormRef.value.formRef
+    const formData = landFormRef.value.form
+    formRef.validate((valid: boolean) => {
+      if (valid) {
+        console.log('验证通过，表单数据：', formData)
+        // 可以传给 API 或存储在某处
+      } else {
+        console.warn('表单校验未通过')
+      }
+    })
+  }
 
-  // // 加载编辑时的数据
-  // const loadData = async (id: string) => {
-  //   console.log(id)
-  // }
-
-  // // 提交表单
-  // const handleSubmit = async () => {}
-
-  // // 组件加载时判断是编辑还是新增
-  // onMounted(() => {
-  //   if (isEdit) {
-  //     loadData(route.params.id as string) // 编辑时加载数据
-  //   }
-  // })
-
-  // // 返回上一页
-  // const goBack = () => {
-  //   router.go(-1) // 或者直接跳回列表页
-  // }
+  const cardBlocks = [
+    { title: '基本信息', slot: 'basic' },
+    { title: '图片/视频/位置信息', slot: 'media' },
+    { title: '地块解读', slot: 'description' },
+    { title: '其他信息', slot: 'other' }
+  ]
 </script>
-
-<style scoped lang="scss"></style>
