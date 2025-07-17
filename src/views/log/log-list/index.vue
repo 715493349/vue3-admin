@@ -9,7 +9,16 @@
         </template>
       </ArtTableHeader>
 
-      <!-- 表格 -->
+      <!-- 表格
+        @loading 加载状态
+        :data 表格数据
+        :columns 表格列
+        :pagination 分页配置
+        :table-config 表格配置
+        :layout 布局配置
+        @pagination:size-change 分页大小改变
+        @pagination:current-change 分页当前页改变
+       -->
       <ArtTable
         :loading="loading"
         :data="tableData"

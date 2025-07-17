@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <h1>多元空间发布</h1>
-  </div>
+  <ArtTableWithOperations :showDelete="false" :componentName="'MultiSpaceRelease'" />
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped>
-  @use './style';
-</style>
+<script setup lang="ts">
+  import ArtTableWithOperations from '../components/tableForm.vue'
+</script>

@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <h1>{{ $t(`menus.business.industrySpaceResourceInput`) }}</h1>
-  </div>
+  <ArtTableWithOperations :showDelete="true" :componentName="'IndustryEntering'" />
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped>
-  @use './style';
-</style>
+<script setup lang="ts">
+  import ArtTableWithOperations from '../components/tableForm.vue'
+</script>

@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <h1>土地发布</h1>
-  </div>
+  <ArtTableWithOperations :showDelete="false" :componentName="'LandRelease'" />
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped>
-  @use './style';
-</style>
+<script setup lang="ts">
+  import ArtTableWithOperations from '../components/tableForm.vue'
+</script>

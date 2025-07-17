@@ -22,6 +22,7 @@ export enum RoutesAlias {
 
   // 业务管理
   landEntering = '/business/landResource/entering', // 土地资源录入
+  landForm = '/business/landResource/components/landForm', // 土地资源编辑新增
   landRelease = '/business/landResource/release', // 土地资源发布
   industryEntering = '/business/industrySpaceResource/entering', // 产业资源录入
   industryRelease = '/business/industrySpaceResource/release', // 产业资源发布

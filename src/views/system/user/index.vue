@@ -52,13 +52,13 @@
   defineOptions({ name: 'User' })
 
   type UserListItem = Api.User.UserListItem
-  const { width } = useWindowSize()
-  const { getUserList } = UserService
+  const { width } = useWindowSize() // 窗口宽度
+  const { getUserList } = UserService // 用户列表 API
 
   // 弹窗相关
-  const dialogType = ref<Form.DialogType>('add')
-  const dialogVisible = ref(false)
-  const currentUserData = ref<Partial<UserListItem>>({})
+  const dialogType = ref<Form.DialogType>('add') // 弹窗类型
+  const dialogVisible = ref(false) // 弹窗是否可见
+  const currentUserData = ref<Partial<UserListItem>>({}) // 当前用户数据
 
   // 选中行
   const selectedRows = ref<UserListItem[]>([])
@@ -94,8 +94,8 @@
     onPageSizeChange: handleSizeChange,
     onCurrentPageChange: handleCurrentChange,
     refreshAll: refresh,
-    refreshAfterCreate: refreshAfterAdd,
-    refreshAfterUpdate: refreshAfterEdit,
+    refreshAfterCreate: refreshAfterAdd, // 新增后刷新
+    refreshAfterUpdate: refreshAfterEdit, // 编辑后刷新
     refreshAfterRemove: refreshAfterDelete
   } = useTable<UserListItem>({
     // 核心配置
@@ -109,7 +109,7 @@
         address: undefined
       },
       columnsFactory: () => [
-        { type: 'selection' }, // 勾选列
+        // { type: 'selection' }, // 勾选列
         { type: 'index', width: 60, label: '序号' }, // 序号
         // { type: 'expand' }, // 展开列
         {

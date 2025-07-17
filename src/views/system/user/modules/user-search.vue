@@ -1,4 +1,11 @@
 <template>
+  <!-- 
+v-model:filter 搜索表单绑定值
+:items 搜索表单配置项
+@reset 重置表单
+@search 搜索处理
+ -->
+
   <ArtSearchBar
     v-model:filter="searchFormState"
     :items="formItems"

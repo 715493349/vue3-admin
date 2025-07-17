@@ -7,8 +7,9 @@
       :show-file-list="false"
       @change="handleFileChange"
     >
-      <ElButton type="primary" v-ripple>
-        <slot>导入 Excel</slot>
+      <ElButton v-ripple>
+        <ElIcon :size="23"><Upload />&nbsp;</ElIcon>
+        <slot>导入</slot>
       </ElButton>
     </ElUpload>
   </div>

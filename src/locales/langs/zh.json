@@ -213,6 +213,8 @@
       "landResource": "土地资源",
       "landResourceInput": "土地资源录入",
       "landResourcePublish": "土地资源发布",
+      "landResourceEdit": "土地资源编辑",
+      "landResourceAdd": "新增土地资源",
       "industrySpaceResource": "产业空间资源",
       "industrySpaceResourceInput": "产业空间资源录入",
       "industrySpaceResourcePublish": "产业空间资源发布",

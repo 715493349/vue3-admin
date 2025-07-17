@@ -68,11 +68,34 @@ export const asyncRoutes: AppRouteRecord[] = [
             }
           },
           {
+            // 新增
+            path: 'entering/add',
+            name: 'LandAdd',
+            component: RoutesAlias.landForm,
+            meta: {
+              title: 'menus.business.landResourceAdd',
+              icon: '&#xe60c;',
+              isHide: true,
+              keepAlive: true
+            }
+          },
+          {
+            path: 'entering/:id',
+            name: 'LandEdit',
+            component: RoutesAlias.landForm,
+            meta: {
+              title: 'menus.business.landResourceEdit',
+              icon: '&#xe60c;',
+              isHide: true,
+              keepAlive: true
+            }
+          },
+          {
             path: 'release',
             name: 'Release',
             component: RoutesAlias.landRelease,
             meta: {
-              title: 'menus.business.landResourcePublish',
+              title: 'menus.business.landResourceEdit',
               icon: '&#xe60c;',
               keepAlive: true
             }

@@ -48,7 +48,11 @@ export default [
         ...autoImportConfig.globals,
         // TypeScript 全局命名空间
         Api: 'readonly',
-        Form: 'readonly'
+        Form: 'readonly',
+        Land: 'readonly',
+        Industry: 'readonly',
+        Business: 'readonly',
+        MultiSpace: 'readonly'
       }
     },
     rules: {

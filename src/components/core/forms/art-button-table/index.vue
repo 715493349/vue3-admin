@@ -5,7 +5,16 @@
     :style="{ backgroundColor: buttonBgColor, color: iconColor }"
     @click="handleClick"
   >
-    <i v-if="iconContent" class="iconfont-sys" v-html="iconContent"></i>
+    <i
+      v-if="iconContent"
+      class="iconfont-sys"
+      v-html="iconContent"
+      :style="{ color: iconColor }"
+    ></i>
+    <!-- 标题 -->
+    <span v-if="showTitle" class="btn-title" :style="{ color: iconColor }">
+      {{ computedTitle }}
+    </span>
   </div>
 </template>
 
@@ -25,9 +34,15 @@
     iconColor?: string
     /** 按钮背景色 */
     buttonBgColor?: string
+    /** 按钮标题 */
+    title?: string
+    /** 是否显示标题 */
+    showTitle?: boolean
   }
 
-  const props = withDefaults(defineProps<Props>(), {})
+  const props = withDefaults(defineProps<Props>(), {
+    showTitle: true
+  })
 
   const emit = defineEmits<{
     (e: 'click'): void
@@ -35,11 +50,11 @@
 
   // 默认按钮配置
   const defaultButtons = {
-    add: { icon: '&#xe602;', color: BgColorEnum.PRIMARY },
-    edit: { icon: '&#xe642;', color: BgColorEnum.SECONDARY },
-    delete: { icon: '&#xe783;', color: BgColorEnum.ERROR },
-    view: { icon: '&#xe689;', color: BgColorEnum.INFO },
-    more: { icon: '&#xe6df;', color: '' }
+    add: { icon: '&#xe602;', color: BgColorEnum.PRIMARY, title: '新增' },
+    edit: { icon: '&#xe642;', color: BgColorEnum.SECONDARY, title: '编辑' },
+    delete: { icon: '&#xe783;', color: BgColorEnum.ERROR, title: '删除' },
+    view: { icon: '&#xe689;', color: BgColorEnum.INFO, title: '查看' },
+    more: { icon: '&#xe6df;', color: '', title: '更多' }
   } as const
 
   // 获取图标内容
@@ -52,6 +67,11 @@
     return props.iconClass || (props.type ? defaultButtons[props.type]?.color : '') || ''
   })
 
+  // 计算标题文字
+  const computedTitle = computed(() => {
+    return props.title || (props.type ? defaultButtons[props.type]?.title : '') || ''
+  })
+
   const handleClick = () => {
     emit('click')
   }
@@ -59,14 +79,14 @@
 
 <style scoped lang="scss">
   .btn-text {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: 34px;
     height: 34px;
     padding: 0 10px;
     margin-right: 10px;
     font-size: 13px;
-    line-height: 34px;
-    color: #666;
     cursor: pointer;
     background-color: rgba(var(--art-gray-200-rgb), 0.7);
     border-radius: 6px;
@@ -74,6 +94,13 @@
 
     &:hover {
       background-color: rgba(var(--art-gray-300-rgb), 0.5);
+    }
+
+    // 新增标题样式
+    .btn-title {
+      margin-left: 4px;
+      font-size: 13px;
+      line-height: 1;
     }
   }
 </style>

@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <h1>{{ $t(`menus.business.landResourceInput`) }}</h1>
-  </div>
+  <ArtTableWithOperations :showDelete="true" :componentName="'LandEntering'" />
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped>
-  @use './style';
-</style>
+<script setup lang="ts">
+  import ArtTableWithOperations from '../components/tableForm.vue'
+</script>
