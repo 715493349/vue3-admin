@@ -163,7 +163,7 @@ class VersionManager {
   ): Promise<void> {
     try {
       if (!upgradeLogList.value.length) {
-        console.warn('[Upgrade] 升级日志列表为空')
+        // console.warn('[Upgrade] 升级日志列表为空')
         return
       }
 
@@ -184,9 +184,9 @@ class VersionManager {
         this.performLogout()
       }
 
-      console.info(`[Upgrade] 升级完成: ${storedVersion} → ${StorageConfig.CURRENT_VERSION}`)
+      // console.info(`[Upgrade] 升级完成: ${storedVersion} → ${StorageConfig.CURRENT_VERSION}`)
     } catch (error) {
-      console.error('[Upgrade] 系统升级处理失败:', error)
+      console.error(error)
     }
   }
 
@@ -196,7 +196,7 @@ class VersionManager {
   async processUpgrade(): Promise<void> {
     // 跳过特定版本
     if (this.shouldSkipUpgrade()) {
-      console.debug('[Upgrade] 跳过版本升级检查')
+      // console.debug('[Upgrade] 跳过版本升级检查')
       return
     }
 
@@ -205,13 +205,13 @@ class VersionManager {
     // 首次访问处理
     if (this.isFirstVisit(storedVersion)) {
       this.setStoredVersion(StorageConfig.CURRENT_VERSION)
-      console.info('[Upgrade] 首次访问，已设置当前版本')
+      // console.info('[Upgrade] 首次访问，已设置当前版本')
       return
     }
 
     // 版本相同，无需升级
     if (this.isSameVersion(storedVersion!)) {
-      console.debug('[Upgrade] 版本相同，无需升级')
+      // console.debug('[Upgrade] 版本相同，无需升级')
       return
     }
 
@@ -219,7 +219,7 @@ class VersionManager {
     const legacyStorage = this.findLegacyStorage()
     if (!legacyStorage.oldSysKey && legacyStorage.oldVersionKeys.length === 0) {
       this.setStoredVersion(StorageConfig.CURRENT_VERSION)
-      console.info('[Upgrade] 无旧数据，已更新版本号')
+      // console.info('[Upgrade] 无旧数据，已更新版本号')
       return
     }
 

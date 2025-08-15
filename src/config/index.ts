@@ -11,7 +11,7 @@ import { headerBarConfig } from './headerBar'
 const appConfig: SystemConfig = {
   // 系统信息
   systemInfo: {
-    name: '萧山资源要素一张图' // 系统名称
+    name: 'Admin Pro' // 系统名称
   },
   // Element Plus 主题
   elementPlusTheme: {
@@ -129,7 +129,7 @@ const appConfig: SystemConfig = {
   ] as const,
   // 系统其他项默认配置
   systemSetting: {
-    defaultMenuWidth: 270, // 菜单宽度
+    defaultMenuWidth: 240, // 菜单宽度
     defaultCustomRadius: '0.75', // 自定义圆角
     defaultTabStyle: 'tab-default' // 标签样式
   },

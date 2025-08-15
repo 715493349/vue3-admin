@@ -12,7 +12,7 @@
         <ArtLogo class="logo2" @click="toHome" />
 
         <!-- 菜单按钮 -->
-        <div class="btn-box" v-if="(isLeftMenu || isTopLeftMenu) && shouldShowMenuButton">
+        <div class="btn-box" v-if="isLeftMenu && shouldShowMenuButton">
           <div class="btn menu-btn">
             <i class="iconfont-sys" @click="visibleMenu">&#xe6ba;</i>
           </div>

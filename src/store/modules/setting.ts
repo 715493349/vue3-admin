@@ -17,7 +17,7 @@ export const useSettingStore = defineStore(
   () => {
     // 菜单相关设置
     /** 菜单类型 */
-    const menuType = ref(MenuTypeEnum.TOP_LEFT)
+    const menuType = ref(MenuTypeEnum.LEFT)
     /** 菜单展开宽度 */
     const menuOpenWidth = ref(defaultMenuWidth)
     /** 菜单是否展开 */

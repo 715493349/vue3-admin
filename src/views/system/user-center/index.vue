@@ -6,7 +6,7 @@
           <img class="bg" src="@imgs/user/bg.webp" />
           <img class="avatar" src="@imgs/user/avatar.webp" />
           <h2 class="name">{{ userInfo.userName }}</h2>
-          <p class="des">后台管理系统模版.</p>
+          <p class="des">这是一个基于 Vue3 + ElementPlus二改的后台管理系统模版</p>
 
           <div class="outer-info">
             <div>
@@ -166,7 +166,7 @@
     mobile: '18888888888',
     address: '地球',
     sex: '1',
-    des: '后台管理系统模版.'
+    des: '这是一个基于 Vue3 + ElementPlus二改的后台管理系统模版.'
   })
 
   const pwdForm = reactive({
@@ -203,7 +203,14 @@
     }
   ]
 
-  const lableList: Array<string> = ['专注设计', '很有想法', '辣~', '大长腿', '女装大佬', '海纳百川']
+  const lableList: Array<string> = [
+    '专注认真',
+    '有想法',
+    '😍辣妹~',
+    '😘大长腿',
+    '😉女装大佬',
+    '海纳百川'
+  ]
 
   onMounted(() => {
     getDate()
